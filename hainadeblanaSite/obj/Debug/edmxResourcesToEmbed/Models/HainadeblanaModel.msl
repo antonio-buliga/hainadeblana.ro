@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hainadeblanaModelStoreContainer" CdmEntityContainer="hainadeblanaEntities">
+    <EntitySetMapping Name="Adresa_Facturare">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Adresa_Facturare">
+        <MappingFragment StoreEntitySet="Adresa_Facturare">
+          <ScalarProperty Name="AdresaFacturareID" ColumnName="AdresaFacturareID" />
+          <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adresa_Livrare">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Adresa_Livrare">
+        <MappingFragment StoreEntitySet="Adresa_Livrare">
+          <ScalarProperty Name="AdresaLivrareID" ColumnName="AdresaLivrareID" />
+          <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorii_Produse">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Categorii_Produse">
+        <MappingFragment StoreEntitySet="Categorii_Produse">
+          <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
+          <ScalarProperty Name="NumeCategorie" ColumnName="NumeCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="NumeUtilizator" ColumnName="NumeUtilizator" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comanda">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Comanda">
+        <MappingFragment StoreEntitySet="Comanda">
+          <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="DataComanda" ColumnName="DataComanda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="FacturaID" ColumnName="FacturaID" />
+          <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+          <ScalarProperty Name="DataFacturare" ColumnName="DataFacturare" />
+          <ScalarProperty Name="CUI" ColumnName="CUI" />
+          <ScalarProperty Name="TotalFactura" ColumnName="TotalFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produs">
+      <EntityTypeMapping TypeName="hainadeblanaModel.Produs">
+        <MappingFragment StoreEntitySet="Produs">
+          <ScalarProperty Name="ProdusID" ColumnName="ProdusID" />
+          <ScalarProperty Name="NumeProdus" ColumnName="NumeProdus" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdusComanda">
+      <EntityTypeMapping TypeName="hainadeblanaModel.ProdusComanda">
+        <MappingFragment StoreEntitySet="ProdusComanda">
+          <ScalarProperty Name="ProdusComandaID" ColumnName="ProdusComandaID" />
+          <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+          <ScalarProperty Name="ProdusID" ColumnName="ProdusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdusImagine">
+      <EntityTypeMapping TypeName="hainadeblanaModel.ProdusImagine">
+        <MappingFragment StoreEntitySet="ProdusImagine">
+          <ScalarProperty Name="ImagineID" ColumnName="ImagineID" />
+          <ScalarProperty Name="ProdusID" ColumnName="ProdusID" />
+          <ScalarProperty Name="CaleImagine" ColumnName="CaleImagine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

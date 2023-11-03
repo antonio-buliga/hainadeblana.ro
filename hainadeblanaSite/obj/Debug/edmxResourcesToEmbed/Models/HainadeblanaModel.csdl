@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hainadeblanaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adresa_Facturare">
+    <Key>
+      <PropertyRef Name="AdresaFacturareID" />
+    </Key>
+    <Property Name="AdresaFacturareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComandaID" Type="Int32" />
+    <Property Name="Adresa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Comanda" Relationship="Self.FK__Adresa_Fa__Coman__693CA210" FromRole="Adresa_Facturare" ToRole="Comanda" />
+  </EntityType>
+  <EntityType Name="Adresa_Livrare">
+    <Key>
+      <PropertyRef Name="AdresaLivrareID" />
+    </Key>
+    <Property Name="AdresaLivrareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComandaID" Type="Int32" />
+    <Property Name="Adresa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Comanda" Relationship="Self.FK__Adresa_Li__Coman__656C112C" FromRole="Adresa_Livrare" ToRole="Comanda" />
+  </EntityType>
+  <EntityType Name="Categorii_Produse">
+    <Key>
+      <PropertyRef Name="CategorieID" />
+    </Key>
+    <Property Name="CategorieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeCategorie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Produs" Relationship="Self.FK__Produs__Categori__5535A963" FromRole="Categorii_Produse" ToRole="Produs" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeUtilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parola" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prenume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Comanda" Relationship="Self.FK__Comanda__ClientI__5CD6CB2B" FromRole="Client" ToRole="Comanda" />
+  </EntityType>
+  <EntityType Name="Comanda">
+    <Key>
+      <PropertyRef Name="ComandaID" />
+    </Key>
+    <Property Name="ComandaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" />
+    <Property Name="DataComanda" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Adresa_Facturare" Relationship="Self.FK__Adresa_Fa__Coman__693CA210" FromRole="Comanda" ToRole="Adresa_Facturare" />
+    <NavigationProperty Name="Adresa_Livrare" Relationship="Self.FK__Adresa_Li__Coman__656C112C" FromRole="Comanda" ToRole="Adresa_Livrare" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__Comanda__ClientI__5CD6CB2B" FromRole="Comanda" ToRole="Client" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK__Factura__Comanda__6D0D32F4" FromRole="Comanda" ToRole="Factura" />
+    <NavigationProperty Name="ProdusComanda" Relationship="Self.FK__ProdusCom__Coman__60A75C0F" FromRole="Comanda" ToRole="ProdusComanda" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="FacturaID" />
+    </Key>
+    <Property Name="FacturaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComandaID" Type="Int32" />
+    <Property Name="DataFacturare" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CUI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TotalFactura" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Comanda" Relationship="Self.FK__Factura__Comanda__6D0D32F4" FromRole="Factura" ToRole="Comanda" />
+  </EntityType>
+  <EntityType Name="Produs">
+    <Key>
+      <PropertyRef Name="ProdusID" />
+    </Key>
+    <Property Name="ProdusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeProdus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pret" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Descriere" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategorieID" Type="Int32" />
+    <NavigationProperty Name="Categorii_Produse" Relationship="Self.FK__Produs__Categori__5535A963" FromRole="Produs" ToRole="Categorii_Produse" />
+    <NavigationProperty Name="ProdusComanda" Relationship="Self.FK__ProdusCom__Produ__619B8048" FromRole="Produs" ToRole="ProdusComanda" />
+    <NavigationProperty Name="ProdusImagine" Relationship="Self.FK__ProdusIma__Produ__5812160E" FromRole="Produs" ToRole="ProdusImagine" />
+  </EntityType>
+  <EntityType Name="ProdusComanda">
+    <Key>
+      <PropertyRef Name="ProdusComandaID" />
+    </Key>
+    <Property Name="ProdusComandaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComandaID" Type="Int32" />
+    <Property Name="ProdusID" Type="Int32" />
+    <NavigationProperty Name="Comanda" Relationship="Self.FK__ProdusCom__Coman__60A75C0F" FromRole="ProdusComanda" ToRole="Comanda" />
+    <NavigationProperty Name="Produs" Relationship="Self.FK__ProdusCom__Produ__619B8048" FromRole="ProdusComanda" ToRole="Produs" />
+  </EntityType>
+  <EntityType Name="ProdusImagine">
+    <Key>
+      <PropertyRef Name="ImagineID" />
+    </Key>
+    <Property Name="ImagineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProdusID" Type="Int32" />
+    <Property Name="CaleImagine" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Produs" Relationship="Self.FK__ProdusIma__Produ__5812160E" FromRole="ProdusImagine" ToRole="Produs" />
+  </EntityType>
+  <Association Name="FK__Adresa_Fa__Coman__693CA210">
+    <End Role="Comanda" Type="Self.Comanda" Multiplicity="0..1" />
+    <End Role="Adresa_Facturare" Type="Self.Adresa_Facturare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comanda">
+        <PropertyRef Name="ComandaID" />
+      </Principal>
+      <Dependent Role="Adresa_Facturare">
+        <PropertyRef Name="ComandaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Adresa_Li__Coman__656C112C">
+    <End Role="Comanda" Type="Self.Comanda" Multiplicity="0..1" />
+    <End Role="Adresa_Livrare" Type="Self.Adresa_Livrare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comanda">
+        <PropertyRef Name="ComandaID" />
+      </Principal>
+      <Dependent Role="Adresa_Livrare">
+        <PropertyRef Name="ComandaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Produs__Categori__5535A963">
+    <End Role="Categorii_Produse" Type="Self.Categorii_Produse" Multiplicity="0..1" />
+    <End Role="Produs" Type="Self.Produs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorii_Produse">
+        <PropertyRef Name="CategorieID" />
+      </Principal>
+      <Dependent Role="Produs">
+        <PropertyRef Name="CategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comanda__ClientI__5CD6CB2B">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Comanda" Type="Self.Comanda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Comanda">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__Comanda__6D0D32F4">
+    <End Role="Comanda" Type="Self.Comanda" Multiplicity="0..1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comanda">
+        <PropertyRef Name="ComandaID" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="ComandaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProdusCom__Coman__60A75C0F">
+    <End Role="Comanda" Type="Self.Comanda" Multiplicity="0..1" />
+    <End Role="ProdusComanda" Type="Self.ProdusComanda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comanda">
+        <PropertyRef Name="ComandaID" />
+      </Principal>
+      <Dependent Role="ProdusComanda">
+        <PropertyRef Name="ComandaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProdusCom__Produ__619B8048">
+    <End Role="Produs" Type="Self.Produs" Multiplicity="0..1" />
+    <End Role="ProdusComanda" Type="Self.ProdusComanda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produs">
+        <PropertyRef Name="ProdusID" />
+      </Principal>
+      <Dependent Role="ProdusComanda">
+        <PropertyRef Name="ProdusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProdusIma__Produ__5812160E">
+    <End Role="Produs" Type="Self.Produs" Multiplicity="0..1" />
+    <End Role="ProdusImagine" Type="Self.ProdusImagine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produs">
+        <PropertyRef Name="ProdusID" />
+      </Principal>
+      <Dependent Role="ProdusImagine">
+        <PropertyRef Name="ProdusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hainadeblanaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adresa_Facturare" EntityType="Self.Adresa_Facturare" />
+    <EntitySet Name="Adresa_Livrare" EntityType="Self.Adresa_Livrare" />
+    <EntitySet Name="Categorii_Produse" EntityType="Self.Categorii_Produse" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Comanda" EntityType="Self.Comanda" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" />
+    <EntitySet Name="Produs" EntityType="Self.Produs" />
+    <EntitySet Name="ProdusComanda" EntityType="Self.ProdusComanda" />
+    <EntitySet Name="ProdusImagine" EntityType="Self.ProdusImagine" />
+    <AssociationSet Name="FK__Adresa_Fa__Coman__693CA210" Association="Self.FK__Adresa_Fa__Coman__693CA210">
+      <End Role="Comanda" EntitySet="Comanda" />
+      <End Role="Adresa_Facturare" EntitySet="Adresa_Facturare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Adresa_Li__Coman__656C112C" Association="Self.FK__Adresa_Li__Coman__656C112C">
+      <End Role="Comanda" EntitySet="Comanda" />
+      <End Role="Adresa_Livrare" EntitySet="Adresa_Livrare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Produs__Categori__5535A963" Association="Self.FK__Produs__Categori__5535A963">
+      <End Role="Categorii_Produse" EntitySet="Categorii_Produse" />
+      <End Role="Produs" EntitySet="Produs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comanda__ClientI__5CD6CB2B" Association="Self.FK__Comanda__ClientI__5CD6CB2B">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Comanda" EntitySet="Comanda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__Comanda__6D0D32F4" Association="Self.FK__Factura__Comanda__6D0D32F4">
+      <End Role="Comanda" EntitySet="Comanda" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProdusCom__Coman__60A75C0F" Association="Self.FK__ProdusCom__Coman__60A75C0F">
+      <End Role="Comanda" EntitySet="Comanda" />
+      <End Role="ProdusComanda" EntitySet="ProdusComanda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProdusCom__Produ__619B8048" Association="Self.FK__ProdusCom__Produ__619B8048">
+      <End Role="Produs" EntitySet="Produs" />
+      <End Role="ProdusComanda" EntitySet="ProdusComanda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProdusIma__Produ__5812160E" Association="Self.FK__ProdusIma__Produ__5812160E">
+      <End Role="Produs" EntitySet="Produs" />
+      <End Role="ProdusImagine" EntitySet="ProdusImagine" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

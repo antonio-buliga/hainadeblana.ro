@@ -1,0 +1,26 @@
+﻿@model hainadeblanaSite.Models.Categorii_Produse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Categorii_Produse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeCategorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeCategorie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategorieID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

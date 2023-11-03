@@ -1,0 +1,39 @@
+﻿@model IEnumerable<hainadeblanaSite.Models.Adresa_Livrare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comanda.ComandaID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comanda.ComandaID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdresaLivrareID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdresaLivrareID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdresaLivrareID })
+        </td>
+    </tr>
+}
+
+</table>

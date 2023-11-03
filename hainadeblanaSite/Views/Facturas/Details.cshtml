@@ -1,0 +1,50 @@
+﻿@model hainadeblanaSite.Models.Factura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFacturare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFacturare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comanda.ComandaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comanda.ComandaID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FacturaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
