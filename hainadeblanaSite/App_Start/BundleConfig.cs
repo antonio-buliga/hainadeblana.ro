@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace hainadeblanaSite
+namespace HainadeblanaSite
 {
     public class BundleConfig
     {

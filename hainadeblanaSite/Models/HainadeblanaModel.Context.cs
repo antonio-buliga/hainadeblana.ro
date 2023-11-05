@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hainadeblanaSite.Models
+namespace HainadeblanaSite.Models
 {
     using System;
     using System.Data.Entity;

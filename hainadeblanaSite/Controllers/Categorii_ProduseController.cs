@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using hainadeblanaSite.Models;
+using HainadeblanaSite.Models;
 
-namespace hainadeblanaSite.Controllers
+namespace HainadeblanaSite.Controllers
 {
     public class Categorii_ProduseController : Controller
     {

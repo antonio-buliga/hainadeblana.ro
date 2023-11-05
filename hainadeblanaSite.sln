@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hainadeblanaSite", "hainadeblanaSite\hainadeblanaSite.csproj", "{BF6864B8-5609-4BFB-A87F-B6BF6B039CD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HainadeblanaSite", "HainadeblanaSite\HainadeblanaSite.csproj", "{480F7B0E-47B0-4280-9419-FE2DDD1B0CB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF6864B8-5609-4BFB-A87F-B6BF6B039CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF6864B8-5609-4BFB-A87F-B6BF6B039CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF6864B8-5609-4BFB-A87F-B6BF6B039CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF6864B8-5609-4BFB-A87F-B6BF6B039CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{480F7B0E-47B0-4280-9419-FE2DDD1B0CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480F7B0E-47B0-4280-9419-FE2DDD1B0CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480F7B0E-47B0-4280-9419-FE2DDD1B0CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480F7B0E-47B0-4280-9419-FE2DDD1B0CB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C035AC7C-C715-4F5C-B26E-48F226D729C8}
+		SolutionGuid = {494A6A2E-484B-451E-B4D8-1383F47C3666}
 	EndGlobalSection
 EndGlobal
