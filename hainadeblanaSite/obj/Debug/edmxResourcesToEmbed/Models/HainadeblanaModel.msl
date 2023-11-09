@@ -34,7 +34,6 @@
           <ScalarProperty Name="NumeUtilizator" ColumnName="NumeUtilizator" />
           <ScalarProperty Name="Parola" ColumnName="Parola" />
           <ScalarProperty Name="Nume" ColumnName="Nume" />
-          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
           <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>

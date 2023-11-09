@@ -47,7 +47,7 @@ namespace HainadeblanaSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ClientID,NumeUtilizator,Parola,Nume,Prenume,Email")] Client client)
+        public async Task<ActionResult> Create([Bind(Include = "ClientID,NumeUtilizator,Parola,Nume,Email")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace HainadeblanaSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ClientID,NumeUtilizator,Parola,Nume,Prenume,Email")] Client client)
+        public async Task<ActionResult> Edit([Bind(Include = "ClientID,NumeUtilizator,Parola,Nume,Email")] Client client)
         {
             if (ModelState.IsValid)
             {

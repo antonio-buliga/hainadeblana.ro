@@ -31,7 +31,6 @@
     <Property Name="NumeUtilizator" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Parola" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="Nume" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Prenume" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="Comanda">

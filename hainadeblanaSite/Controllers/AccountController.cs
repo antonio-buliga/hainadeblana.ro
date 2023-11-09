@@ -17,7 +17,7 @@ namespace HainadeblanaSite.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private hainadeblanaEntities db = new hainadeblanaEntities();
         public AccountController()
         {
         }
@@ -156,12 +156,21 @@ namespace HainadeblanaSite.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    Client client = new Client();
+                    client.NumeUtilizator = model.Username;
+                    client.Email = model.Email;
+                    client.Parola = model.Password;
+                    client.Nume = model.Nume;
+                    db.Client.Add(client);
+                    await db.SaveChangesAsync();
+
 
                     return RedirectToAction("Index", "Home");
                 }

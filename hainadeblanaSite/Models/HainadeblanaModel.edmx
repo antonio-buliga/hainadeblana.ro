@@ -36,7 +36,6 @@
           <Property Name="NumeUtilizator" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Parola" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Nume" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Prenume" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Comanda">
@@ -261,7 +260,6 @@
           <Property Name="NumeUtilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Parola" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Nume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Prenume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Comanda" Relationship="Self.FK__Comanda__ClientI__5CD6CB2B" FromRole="Client" ToRole="Comanda" />
         </EntityType>
@@ -499,7 +497,6 @@
                 <ScalarProperty Name="NumeUtilizator" ColumnName="NumeUtilizator" />
                 <ScalarProperty Name="Parola" ColumnName="Parola" />
                 <ScalarProperty Name="Nume" ColumnName="Nume" />
-                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -24,7 +24,6 @@ namespace HainadeblanaSite.Models
         public string NumeUtilizator { get; set; }
         public string Parola { get; set; }
         public string Nume { get; set; }
-        public string Prenume { get; set; }
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

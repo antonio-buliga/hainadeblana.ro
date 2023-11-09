@@ -34,7 +34,6 @@
     <Property Name="NumeUtilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Parola" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Nume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Prenume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Comanda" Relationship="Self.FK__Comanda__ClientI__5CD6CB2B" FromRole="Client" ToRole="Comanda" />
   </EntityType>
